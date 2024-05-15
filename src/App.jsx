@@ -1,9 +1,12 @@
 import "./App.css";
+import HomeScreen from "./screens/home/HomeScreen";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="flex flex-col items-center p-4 md:p-10">
+      <div className="max-w-2xl w-full items-center">
+        <HomeScreen />
+      </div>
     </div>
   );
 }
