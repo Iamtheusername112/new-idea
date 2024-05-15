@@ -3,6 +3,19 @@ import "./App.css";
 import Hero from "./screens/home/components/Hero";
 import HomeScreen from "./screens/home/HomeScreen";
 import { ThemeContext } from "./context/ThemeContext";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AddNewScreen from "./screens/newIdea/AddNewScreen";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomeScreen />,
+  },
+  {
+    path: "/new",
+    element: <AddNewScreen />,
+  },
+]);
 
 function App() {
   const [theme, setTheme] = useState("lemonade");
@@ -14,8 +27,7 @@ function App() {
         data-theme={theme}
       >
         <div className="max-w-2xl w-full items-center">
-          <HomeScreen />
-          <Hero />
+          <RouterProvider router={router} />
         </div>
       </div>
     </ThemeContext.Provider>
